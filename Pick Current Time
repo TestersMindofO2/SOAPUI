@@ -1,0 +1,12 @@
+How to pick the current time on fly convert it to the required format and send it to the request body?
+
+import java.text.SimpleDateFormat
+
+def call(){
+    def date = new Date()
+    sdf = new SimpleDateFormat("yyyyMMddhhmmss")
+    return sdf.format(date)
+    }
+   return call()
+   
+   Then, from the request body for the date field, use GetData using script result eg: "${<Groovyscript-name>#result}"

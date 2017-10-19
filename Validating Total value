@@ -1,0 +1,16 @@
+sum of first 3 values and compare it with total value using assertion groovy script.
+
+Request:
+{
+   "major": 21,
+   "minor": 1,
+   "critical": 3,
+   "total": 25
+}
+
+Responce:
+assert context.response, 'Response is empty or null'
+//Parse the json
+def json = new groovy.json.JsonSlurper().parseText(context.response)
+//Check if sum of 3 properties equal to toal
+assert json.total == json.with { major + minor + critical}

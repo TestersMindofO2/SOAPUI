@@ -6,3 +6,7 @@ charset = (('A'..'B')).join()
 length = 4
 def result =RandomStringUtils.random(length, charset.toCharArray())
 log.info result
+
+
+# Note: If u need combination of small letters, capital leters and also numbers you can use below code:
+charset = (('a'..'z') + ('A'..'Z') + ('0'..'9')).join()

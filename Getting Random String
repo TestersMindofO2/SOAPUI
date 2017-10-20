@@ -1,0 +1,8 @@
+#How to get random string using groovy script?
+
+import org.apache.commons.lang.RandomStringUtils 
+
+charset = (('A'..'B')).join()
+length = 4
+def result =RandomStringUtils.random(length, charset.toCharArray())
+log.info result

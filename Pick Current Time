@@ -9,4 +9,4 @@ def call(){
     }
    return call()
    
-   Then, from the request body for the date field, use GetData using script result eg: "${<Groovyscript-name>#result}"
+  In the request body for the date field, use GetData using script result eg: "${<Groovyscript-name>#result}"

@@ -2,7 +2,8 @@ Step 1) Create a Groovy Script in Test Suite level(eg Name of groovy script is: 
 Step 2) Paste the below code: Note test steps should be mapped to your login test case eg. testSteps["Login"]
 
 def str = new String(testRunner.testCase.testSteps["Login"].testRequest.response.rawResponseData)
-return str.split("Authorization")[1].split(": ")[1].split("\n")[0]
+return str.split("Authorization: ")[1].split("\n")[0]
+
 
 Step 3) IN every request header pass ${Auth#result} as value.
-Note: You might required to change little bit of change in code for split based on the position of ur responce.
+Note: You might required to change little bit of code for split based on the position of ur responce.

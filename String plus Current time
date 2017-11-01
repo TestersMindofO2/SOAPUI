@@ -1,0 +1,11 @@
+import java.text.SimpleDateFormat
+
+def call(){
+    def date = new Date()
+    sdf = new SimpleDateFormat("yyyyMMddhhmmss")
+    
+    return "API-Test-Topo_"+ sdf.format(date)
+   
+    }
+    
+      return call()

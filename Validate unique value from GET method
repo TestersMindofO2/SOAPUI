@@ -1,0 +1,7 @@
+import groovy.json.JsonSlurper 
+def response = messageExchange.response.responseContent
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+def customName= 'ABCD'
+def index = json.name.indexOf(customName)
+assert json.name[index]==customName

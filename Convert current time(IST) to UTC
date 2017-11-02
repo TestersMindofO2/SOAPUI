@@ -10,15 +10,7 @@ If you want to pass it from Request body then
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 If you want to add extra mins. to current time and then convert to UST.
 
-import java.text.SimpleDateFormat
-import groovy.time.TimeCategory
- def date = new Date()
-    sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
-    
-	use( TimeCategory ) {
-    	  date +=  15.minutes
-	}
-sdf.setTimeZone(TimeZone.getTimeZone("IST"))
-log.info("IST ${sdf.format(date)}")
-sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
-log.info("UTC ${sdf.format(date)}")
+def date=new Date()
+use(groovy.time.TimeCategory){ date = date.plus(10.minutes) }
+def dateString = date.format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone('UST'))
+return dateString

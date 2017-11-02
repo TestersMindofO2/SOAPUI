@@ -1,12 +1,10 @@
-import java.text.SimpleDateFormat;
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+Convert Current time to UTC
 
-def d = new Date()
-def sdf = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss")
-sdf.setTimeZone(TimeZone.getTimeZone("IST"))
-println("IST ${sdf.format(d)}")
-sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
-println("UTC ${sdf.format(d)}")
+log.info new Date().format("yyyy-MM-dd hh:mm:ss",TimeZone.getTimeZone('UST'))
 
+If you want to pass it from Request body then 
+<date>${= new Date().format("yyyy-MM-dd HH:mm:ss", TimeZone.getTimeZone('UTC'))}</date>
 
 
 $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -21,7 +19,6 @@ import groovy.time.TimeCategory
     	  date +=  15.minutes
 	}
 sdf.setTimeZone(TimeZone.getTimeZone("IST"))
-
 log.info("IST ${sdf.format(date)}")
 sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
 log.info("UTC ${sdf.format(date)}")

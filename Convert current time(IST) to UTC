@@ -1,0 +1,27 @@
+import java.text.SimpleDateFormat;
+
+def d = new Date()
+def sdf = new SimpleDateFormat ("yyyy-MM-dd HH:mm:ss")
+sdf.setTimeZone(TimeZone.getTimeZone("IST"))
+println("IST ${sdf.format(d)}")
+sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
+println("UTC ${sdf.format(d)}")
+
+
+
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+If you want to add extra mins. to current time and then convert to UST.
+
+import java.text.SimpleDateFormat
+import groovy.time.TimeCategory
+ def date = new Date()
+    sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss")
+    
+	use( TimeCategory ) {
+    	  date +=  15.minutes
+	}
+sdf.setTimeZone(TimeZone.getTimeZone("IST"))
+
+log.info("IST ${sdf.format(date)}")
+sdf.setTimeZone(TimeZone.getTimeZone("UTC"))
+log.info("UTC ${sdf.format(date)}")

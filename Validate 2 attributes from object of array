@@ -1,0 +1,13 @@
+import groovy.json.JsonSlurper 
+def response = messageExchange.response.responseContent
+def slurper = new JsonSlurper()
+def json = slurper.parseText response
+def customName= 'ABCD'
+def customStatus= 'Active'
+for(index = 0; index< json.name.size();index++){
+	if(json.name[index] == customName && json.status[index] == customStatus){
+		assert true
+		return
+	}
+}
+assert false

@@ -1,0 +1,4 @@
+import com.eviware.soapui.support.XmlHolder
+def response = messageExchange.response.responseContent
+def holder=new XmlHolder(response)
+log.info holder.getNodeValue("-----XPATH-----")

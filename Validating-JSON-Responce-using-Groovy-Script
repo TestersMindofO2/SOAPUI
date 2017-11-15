@@ -5,4 +5,4 @@ def response = messageExchange.response.responseContent
 def slurper = new JsonSlurper() 
 def json = slurper.parseText response 
 assert json.status=="SUCCESS" 
-assert json.inpor=="ABCD"
+assert json.name=="ABCD"

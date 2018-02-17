@@ -4,6 +4,7 @@ def call(){
     sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     
 	use( TimeCategory ) {
+	//adding extra 30 mins
     	  date +=  30.minutes
 	}
     return sdf.format(date)
